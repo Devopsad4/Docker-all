@@ -1,0 +1,14 @@
+
+docker service create --name webap -p 5555:80 --replicas 2 nginx[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C[D[C[C[D[Dd[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1 docker service create --name webap -p 5555:80 --replicas 2 nginx
+
+2 docker network create --driver overlay Adarsh1
+
+3 docker service create --name web -p 7777:80 --replicas 3 --network Adarsh1 httpd
+
+4 docker service create --name appserver -p 9999:8080 --replicas 5 tomcat
+
+5 docker service update --network-add intelliqit2 appserver
+
+6 docker service inspect appserver --pretty
+
+7 docker service update --network-rm intelliqit2 appserver
