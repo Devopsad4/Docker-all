@@ -31,7 +31,7 @@ services:
       replicas: 3
       placement:
          constraints:
-           - node.hostname == Worker 2
+           - node.hostname == Worker 4
 
 ...
 
