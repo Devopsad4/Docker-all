@@ -1,0 +1,17 @@
+---
+version: '3.8'
+services:
+  mydb:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: adarsh
+
+  Word:
+    image: wordpress
+    ports:
+      - 7777:80
+    links:
+      - mydb
+
+...
+
