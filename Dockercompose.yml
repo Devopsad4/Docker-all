@@ -1,17 +1,27 @@
 ---
 version: '3.8'
 services:
-  mydb:
-    image: mysql:5
-    environment:
-      MYSQL_ROOT_PASSWORD: adarsh
-
-  Word:
-    image: wordpress
+  myjen:
+    image: jenkins/jenkins
     ports:
-      - 7777:80
+      - 5555:8080
+    container_name: Jen
+
+  Qas:
+    image: tomee
+    ports:
+      - 6666:8080
+    container_name: Qas
     links:
-      - mydb
+      - myjen
+
+  Prod:
+    image: tomee
+    ports:
+      - 8888:8080
+    container_name: Prod
+    links:
+      - myjen
 
 ...
-
+:
