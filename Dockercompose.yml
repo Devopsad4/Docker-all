@@ -1,27 +1,22 @@
 ---
 version: '3.8'
 services:
-  myjen:
-    image: jenkins/jenkins
-    ports:
-      - 5555:8080
-    container_name: Jen
+  mydb:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: adarsh
 
-  Qas:
-    image: tomee
+  apche:
+    image: httpd
     ports:
-      - 6666:8080
-    container_name: Qas
+      - 5555:80
     links:
-      - myjen
+      - mydb
 
-  Prod:
-    image: tomee
-    ports:
-      - 8888:8080
-    container_name: Prod
+  php:
+    image: php:7.2-apache
     links:
-      - myjen
-
+      - mydb
+      - apche
 ...
-:
+
