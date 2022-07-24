@@ -1,0 +1,3 @@
+FROM jenkins/jenkins
+MAINTAINER adarsh
+USER root
