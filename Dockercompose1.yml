@@ -1,0 +1,26 @@
+---
+version: '3.8'
+services:
+  myjen:
+    image: jenkins/jenkins
+    ports:
+      - 5555:8080
+    container_name: Jen
+
+  Qas:
+    image: tomee
+    ports:
+      - 6666:8080
+    container_name: Qas
+    links:
+      - myjen
+
+  Prod:
+    image: tomee
+    ports:
+      - 8888:8080
+    container_name: Prod
+    links:
+      - myjen
+
+...
