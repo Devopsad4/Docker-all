@@ -1,0 +1,8 @@
+FROM ubuntu
+MAINTAINER adarshdesh
+COPY . /shell.sh /
+RUN . /shell.sh
+
+
+
+:
